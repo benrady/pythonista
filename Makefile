@@ -20,7 +20,7 @@ help:
 $(PROJECT_NAME):
 	# Initialize the project
 	git mv pythonista $(PROJECT_NAME)
-	sed -i "s/pythonista/skyblock/g" test/main_test.py
+	sed -i "s/pythonista/$(PROJECT_NAME)/g" test/main_test.py
 	git add test/main_test.py
 
 $(CONDA): | $(PROJECT_NAME)
