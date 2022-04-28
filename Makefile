@@ -1,7 +1,7 @@
 SHELL := $(shell which bash)
 MINICONDA := $(CURDIR)/.miniconda3
 CONDA := $(MINICONDA)/bin/conda
-CONDA_VERSION := 4.7.10
+CONDA_VERSION := 4.11.0
 VENV := $(PWD)/.venv
 DEPS := $(VENV)/.deps
 PYTHON := $(VENV)/bin/python
@@ -25,7 +25,7 @@ $(PROJECT_NAME):
 
 $(CONDA): | $(PROJECT_NAME)
 	echo "Installing Miniconda3 to $(MINICONDA)"
-	wget https://repo.anaconda.com/miniconda/Miniconda3-$(CONDA_VERSION)-Linux-x86_64.sh -O $(CURDIR)/miniconda.sh
+	wget https://repo.anaconda.com/miniconda/Miniconda3-py39_$(CONDA_VERSION)-Linux-x86_64.sh -O $(CURDIR)/miniconda.sh
 	bash $(CURDIR)/miniconda.sh -u -b -p "$(CURDIR)/.miniconda3"
 	rm $(CURDIR)/miniconda.sh
 
