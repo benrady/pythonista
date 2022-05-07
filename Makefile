@@ -6,7 +6,7 @@ VENV := $(PWD)/.venv
 DEPS := $(VENV)/.deps
 PYTHON := $(VENV)/bin/python
 PYTHON_CMD := PYTHONPATH=$(CURDIR) $(PYTHON)
-PROJECT_NAME=$(shell basename $(CURDIR))
+PROJECT_NAME=$(shell basename $(CURDIR) | tr - _)
 PYLINT_CMD := $(PYTHON_CMD) -m pylint $(PROJECT_NAME) test
 
 ifndef VERBOSE
