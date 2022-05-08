@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-PROJECT_NAME=$(basename $(dirname $(readlink -f "$0")))
+MODULE_NAME=$(echo $(basename $(dirname $(readlink -f "$0"))) | tr - _)
 
 exec 2>&1
 
-exec .venv/bin/python3 -m "$PROJECT_NAME" "$@"
+exec .venv/bin/python3 -m "$MODULE_NAME" "$@"
