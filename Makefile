@@ -32,7 +32,7 @@ $(CONDA): | $(PROJECT_NAME)
 environment.yml: | $(CONDA)
 
 $(DEPS): environment.yml
-	$(CONDA) env create -f environment.yml -p $(VENV)
+	$(CONDA) env create -f environment.yml -p $(VENV) --force
 	cp environment.yml $(DEPS)
 
 .PHONY: clean
